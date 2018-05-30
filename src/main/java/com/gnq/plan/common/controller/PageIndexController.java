@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @Controller
 public class PageIndexController {
-    @RequestMapping(value ="/", method = RequestMethod.GET)
+    @RequestMapping(value ="/index", method = RequestMethod.GET)
     public String getIndex(HttpServletRequest request){
         return "login";
     }
