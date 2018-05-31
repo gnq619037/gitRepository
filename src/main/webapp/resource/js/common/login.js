@@ -13,6 +13,15 @@ layui.use(['form', 'layedit', 'laydate'], function(){
         layer.alert(JSON.stringify(data.field), {
             title: '最终的提交信息'
         })
+        $.ajax({//异步请求返回给后台
+            url:'/user/showUser',
+            type:'POST',
+            data:JSON.stringify(data.field),
+            dataType:'json',
+            success:function(data){
+
+            }
+        });
         return false;
     });
 });
