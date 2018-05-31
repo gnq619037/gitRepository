@@ -11,4 +11,6 @@ import com.gnq.plan.common.bean.User;
  */
 public interface UserService {
     User getUser(Integer id);
+
+    User userLogin(String username);
 }
