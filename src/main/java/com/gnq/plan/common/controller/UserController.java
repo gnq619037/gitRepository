@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by NightGuo on 2018/5/24.
@@ -21,11 +23,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/showUser")
-    public String showUser(HttpServletRequest request){
+    @RequestMapping("/user")
+    public Map<String, Object> showUser(HttpServletRequest request){
+        Map<String, Object> map = new HashMap<String, Object>();
         int userId = Integer.parseInt(request.getParameter("id"));
         User user = userService.getUser(userId);
         System.out.println(user);
-        return "showUser";
+        map.put("data", user);
+        return map;
     }
 }
